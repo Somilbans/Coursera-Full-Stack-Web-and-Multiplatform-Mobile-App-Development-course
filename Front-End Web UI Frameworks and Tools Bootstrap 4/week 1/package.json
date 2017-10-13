@@ -8,11 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server"
   },
- "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Somilbans/Coursera-Full-Stack-Web-and-Multiplatform-Mobile-App-Development-course.git"
   },
- 
   "author": "Somil Bansal",
   "license": "ISC",
   "devDependencies": {

@@ -70,3 +70,28 @@ body{
     position: absolute;
     bottom: 0px;
 }
+
+.modal-header {
+    background: $background-dark;
+    color: floralwhite;
+
+    .modal-header-item {
+        color: floralwhite;
+    }
+}
+
+.modal-body {
+    background: $background-light;
+}
+
+.modal-footer {
+    background: $background-pale;
+}
+
+#reserveX {
+    color: floralwhite;
+}
+
+#loginX {
+    color: floralwhite;
+}

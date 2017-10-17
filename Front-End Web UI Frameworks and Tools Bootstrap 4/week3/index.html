@@ -70,6 +70,95 @@
         </div>
     </div>
     
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Reserve a Table </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class=" row form-group mt-3">
+                            <div class="col-sm-2">Number of Guest</div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <label class="ml-3 mr-4">
+                                        <input type="radio" name="guests"  id="one" value="1">1
+                                    </label>
+                                            
+                                    <label class="mr-4">
+                                        <input type="radio" name="guests" id="two" value="2">2
+                                    </label>
+                                        
+                                    <label class="mr-4">
+                                        <input type="radio" name="guests" id="three" value="3">3
+                                    </label>
+                                        
+                                    <label class="mr-4">
+                                        <input type="radio" name="guests" id="four" value="4">4
+                                    </label>
+                                        
+                                    <label class="mr-4">
+                                        <input type="radio" name="guests" id="five" value="5">5
+                                    </label>
+                                    <label class="mr-4">
+                                        <input type="radio" name="guests" id="six" value="6">6
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div  class="form-group row mt-3">
+                            <div class="col-sm-2">
+                                Section
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-sm btn-success active">
+                                        <input type="radio" name="section" id="section" value="nonsmoking" checked autocomplete="off" > Non-Smoking
+                                    </label>
+                                    <label class="btn btn-sm btn-danger">
+                                        <input type="radio"  name="section" id="section"  value="smoking" autocomplete="off"> Smoking
+                                    </label>
+                                </div>
+                            </div>
+                        </div> 
+                   
+
+                                     
+                       <div class=" row form-group mt-3">
+                            <div class="col-sm-2">
+                                Date and Time
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="input-group col-sm-5">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input type="text" class="form-control" placeholder=" Date">
+                                    </div>
+                                    <div class="input-group col-sm-5">
+                                        <div class="input-group-addon"><i class="fa fa-clock-o"></i></div>
+                                        <input type="text" class="form-control" placeholder=" Time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div  class="form-group">
+                            <div class="col offset-md-2 col-sm-10">
+                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button> 
+                                <button type="submit" class="btn btn-primary btn-sm">Reserve</button>
+                               
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <header class="jumbotron">
         <div class="container">
@@ -83,7 +172,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>" ata-placement="bottom" href="#reserveform">Reserve Table </a>
+                <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveModal">Reserve Table </a>
                 </div>
             </div>
         </div>
@@ -197,65 +286,7 @@
             </div>
         </div>
     
-        <div class="row row-content">
-            <div class="card col-sm-8 offset-sm-2">
-                <h3 class="card-header row bg-warning text-white" >Reserve a Table</h2>
-                <div class="card-body">
-                    <form id="reserve-form">
-                        <div class=" row form-group mt-3">
-                            <div class="col-sm-2">Number of Guest</div>
-                            <div class="col-sm-10">
-                                <div class="row">
-                                    <label class="ml-3 mr-4">
-                                        <input type="radio" name="guests">1
-                                    </label>
-                                            
-                                    <label class="mr-4">
-                                        <input type="radio" name="guests">2
-                                    </label>
-                                        
-                                    <label class="mr-4">
-                                        <input type="radio" name="guests">3
-                                    </label>
-                                        
-                                    <label class="mr-4">
-                                        <input type="radio" name="guests">4
-                                    </label>
-                                        
-                                    <label class="mr-4">
-                                        <input type="radio" name="guests">5
-                                    </label>
-                                        
-                                    <label class="mr-4">
-                                        <input type="radio" name="guests">6
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                            
-                        <div class=" row form-group mt-3">
-                            <div class="col-sm-2">
-                                Date and Time
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="row">
-                                    <div class="input-group col-sm-4">
-                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input type="text" class="form-control" placeholder=" Date">
-                                    </div>
-                                    <div class="input-group col-sm-4">
-                                        <div class="input-group-addon"><i class="fa fa-clock-o"></i></div>
-                                        <input type="text" class="form-control" placeholder=" Time">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary offset-sm-2">Reserve</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
           
         
     <footer class="footer">

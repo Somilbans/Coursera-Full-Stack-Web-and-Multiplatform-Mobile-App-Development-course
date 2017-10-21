@@ -3,22 +3,6 @@
 
 // some basic resets 
 
-body { 
-  padding: 0; 
-  margin: 0; 
-  font-family: Roboto, sans-serif; 
-  
-}
-
-
-
-.container {
-    margin: 20px;
-    display:flex;
-}
-
-
-
 
 $lt-gray: #ddd;
 $background-dark: #512DA8;
@@ -39,6 +23,19 @@ $divider-color:        #BDBDBD;
 }
 
 
+body { 
+  padding: 0; 
+  margin: 0; 
+  font-family: Roboto, sans-serif; 
+  
+}
+
+
+
+.container {
+    margin: 20px;
+    display:flex;
+}
 
 .background-primary {
     background-color: $background-dark!important;

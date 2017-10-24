@@ -45,6 +45,12 @@
           "rating": 5,
           "comment": "Very nice!",
           "date": "2017-10-09T16:16:48.552Z"
+        },
+        {
+          "author": "abc",
+          "date": "2017-10-24T21:13:17.018Z",
+          "comment": "good dish",
+          "rating": 5
         }
       ]
     },
@@ -224,7 +230,5 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": [
-    
-  ]
+  "feedback": []
 }

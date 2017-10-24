@@ -21,17 +21,21 @@ export class LeaderService {
   constructor(private http: Http, private processHttpmsgService: ProcessHttpmsgService) { }
 
 getLeaders(): Observable<Leader[]> {
-   return this.http.get(baseURL + 'leaders').map(res => { return this.processHttpmsgService.extractData(res); });
-   
+   return this.http.get(baseURL + 'leaders').map(res => { return this.processHttpmsgService.extractData(res); })
+                  .catch(error =>{ return this.processHttpmsgService.handleError(error);});
   }
 
    getLeader(id: number): Observable<Leader> {
-    return this.http.get(baseURL + 'leaders/' + id).map(res => this.processHttpmsgService.extractData(res));
+    return this.http.get(baseURL + 'leaders/' + id).map(res => { return this.processHttpmsgService.extractData(res); })
+                  .catch(error =>{ return this.processHttpmsgService.handleError(error);});
+
    
   }
 
  getFeaturedLeader(): Observable<Leader> {
- return  this.http.get(baseURL + 'leaders?featured=true').map(res => this.processHttpmsgService.extractData(res)[0]);
+ return  this.http.get(baseURL + 'leaders?featured=true').map(res => { return this.processHttpmsgService.extractData(res)[0]; })
+                  .catch(error =>{ return this.processHttpmsgService.handleError(error);});
+
     
   }
   

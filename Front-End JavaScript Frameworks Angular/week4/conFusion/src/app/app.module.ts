@@ -30,6 +30,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 
 import { baseURL } from './shared/baseurl';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { baseURL } from './shared/baseurl';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -7,25 +7,16 @@ import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
 
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {visibility,flyInOut, expand} from '../animations/app.animation';
 import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  
-  animations: [
-       trigger('visibility', [
-          state('shown', style({
-           transform: 'scale(1.0)',
-           opacity: 1
-          })),
-           state('hidden', style({
-              transform: 'scale(0.5)',
-              opacity: 0
-          })),
-          transition('* => *', animate('0.5s ease-in-out'))
-          ])],
+  host:{  '[@flyInOut]': 'true',
+  'style': 'display: block;'},
+animations:[flyInOut(),visibility(),expand()],
   styleUrls: ['./dishdetail.component.scss']
 
 })

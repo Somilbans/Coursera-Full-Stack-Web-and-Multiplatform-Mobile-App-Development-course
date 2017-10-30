@@ -12,7 +12,7 @@ import { FeedbackService } from '../services/feedback.service';
   styleUrls: ['./contact.component.scss'],
   host:{  '[@flyInOut]': 'true',
   'style': 'display: block;'},
-animations:[flyInOut(), expand()]
+  animations:[flyInOut(), expand()]
 })
 export class ContactComponent implements OnInit {
 
@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
   feedback: Feedback;
   contactType = ContactType;
       
-     formErrors = {
+  formErrors = {
     'firstname': '',
     'lastname': '',
     'telnum': '',

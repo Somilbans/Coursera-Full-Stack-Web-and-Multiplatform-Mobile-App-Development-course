@@ -29,16 +29,16 @@ export class DishdetailComponent implements OnInit {
   next; number;
   errMess: string;
   visibility = 'shown'; 
- dishfeedbackform: FormGroup;
- dishComment: Comment;
+  dishfeedbackform: FormGroup;
+  dishComment: Comment;
 
- formErrors = {
+  formErrors = {
     author: '',
     rating: '',
     comment: ''
   };
 
- validationMessages = {
+  validationMessages = {
     author: {
       required: 'Author Name is required.',
       minlength: 'Author Name must be 2 or more characters long.'
@@ -46,16 +46,16 @@ export class DishdetailComponent implements OnInit {
     comment: {
       required: 'Comment is required.'
     }
- };
+  };
 
- constructor(private dishservice: DishService,
+  constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private location: Location,
     @Inject('BaseURL') private BaseURL) {
       this.createForm();
        this.dishComment = new Comment();
-    }
+  }
 
   ngOnInit() {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
@@ -90,9 +90,9 @@ export class DishdetailComponent implements OnInit {
         }
       }
     }
-}
+  }
   
- onSubmit() {
+  onSubmit() {
     if (this.dishfeedbackform.value) {
       this.dishComment.author = this.dishfeedbackform.value.author;
       this.dishComment.date = new Date().toISOString();
@@ -109,13 +109,13 @@ export class DishdetailComponent implements OnInit {
     });
   }
 
- setPrevNext(dishId: number) {
+  setPrevNext(dishId: number) {
     let index = this.dishIds.indexOf(dishId);
     this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
     this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
   }
 
- goBack(): void {
+  goBack(): void {
     this.location.back();
   }
 

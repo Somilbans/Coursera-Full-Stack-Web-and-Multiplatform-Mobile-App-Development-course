@@ -12,4 +12,5 @@ import { routes } from './routes';
   exports: [ RouterModule ],
   declarations: []
 })
+
 export class AppRoutingModule { }

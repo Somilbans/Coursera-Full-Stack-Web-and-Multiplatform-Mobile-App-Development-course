@@ -18,7 +18,8 @@ export class FeedbackService {
   constructor(private restangular: Restangular,
     private processHTTPMsgService: ProcessHttpmsgService) { }
 
-
+    
+    
   submitFeedback(feedback: Feedback): Observable<Feedback> {
     if (feedback) {
       return this.restangular.all('feedback').post(feedback);

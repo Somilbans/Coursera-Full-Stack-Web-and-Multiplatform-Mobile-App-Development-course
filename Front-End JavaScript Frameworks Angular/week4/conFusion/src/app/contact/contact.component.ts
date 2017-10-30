@@ -3,7 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 import {flyInOut, expand} from '../animations/app.animation';
-
+import { Observable } from 'rxjs/Observable';
 import { FeedbackService } from '../services/feedback.service';
 
 @Component({
@@ -19,7 +19,12 @@ export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
-      
+   
+  feedbackcopy: Feedback;
+  feedbackErr: string;
+  submitted = false;
+  hideForm = false;
+
   formErrors = {
     'firstname': '',
     'lastname': '',
@@ -89,18 +94,52 @@ export class ContactComponent implements OnInit {
     }
   }
 
+
+
+
+
+  /**
+   * reset form values and hide other intermediate divs
+   * using observable timer
+   * @param timer 
+   */
+  reset(timer: number) {
+      Observable.timer(timer).subscribe(() => {
+          this.feedbackForm.reset({
+            firstname: '',
+            lastname: '',
+            telnum: '',
+            email: '',
+            agree: false,
+            contacttype: 'None',
+            message: ''
+          });
+          this.feedbackcopy = null;
+          this.hideForm = false;
+          this.submitted=false;
+        });
+    }
+
+
+
+
   onSubmit() {
+    this.submitted = true;
+    
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
-     this.feedbackservice.submitFeedback(this.feedbackForm.value).subscribe(feedback => this.feedback = feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: '',
-      email: '',
-      agree: false,
-      contacttype: 'None',
-      message: ''
-    });
+    setTimeout(() => { this.submitted=false; }, 2000);
+    
+    this.feedbackservice.submitFeedback(this.feedbackForm.value).
+        subscribe(feedback => {this.feedbackcopy = feedback;
+          
+          this.reset(5000);
+        },
+        errmess => {
+          this.feedback = <any>errmess;
+          this.submitted = false;
+          this.reset(0);
+        }
+      );
   }
 }

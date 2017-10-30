@@ -51,6 +51,12 @@
           "date": "2017-10-24T21:13:17.018Z",
           "comment": "good dish",
           "rating": 5
+        },
+        {
+          "author": "Test Author",
+          "date": "2017-10-30T11:52:51.860Z",
+          "comment": "Test Comment",
+          "rating": 5
         }
       ]
     },

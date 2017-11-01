@@ -11,6 +11,9 @@ import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 import {FavoritesPage} from '../pages/favorites/favorites';
 import { ReservationPage } from '../pages/reservation/reservation';
+import { LoginPage } from '../pages/login/login';
+
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -53,6 +56,11 @@ export class MyApp {
         modal.present();
       }
       
+  openLogin() {
+        let modal = this.modalCtrl.create(LoginPage);
+        modal.present();
+      }
+
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario

@@ -57,10 +57,28 @@ export class RegisterPage {
   this.camera.getPicture(options).then((imageData) => {
   this.image = imageData;
   console.log(imageData);
-  }, (err) => {
-  console.log('Error obtaining picture')
+  },
+  (err) => {  console.log('Error obtaining picture')
   });
   }
+
+  getFromLibrary() {
+    
+        let cameraOptions = {
+          sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+          destinationType: this.camera.DestinationType.FILE_URI,
+          quality: 100,
+          targetWidth: 1000,
+          targetHeight: 1000,
+          allowEdit: true,
+          correctOrientation: true,
+          encodingType: this.camera.EncodingType.JPEG
+        }
+    
+        this.camera.getPicture(cameraOptions)
+          .then(file_uri => this.image = file_uri,
+          err => console.log(err));
+    }
 
   onSubmit() {
   console.log(this.registerForm.value);

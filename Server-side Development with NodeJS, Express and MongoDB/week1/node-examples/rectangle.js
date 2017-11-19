@@ -13,6 +13,3 @@ module.exports = (x,y,callback) => {
                         }),
                         2000);
 }
-
-perimeter = (x, y) => (2*(x+y));
-area = (x, y) => (x*y);

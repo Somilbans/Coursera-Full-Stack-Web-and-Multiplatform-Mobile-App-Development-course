@@ -113,7 +113,7 @@ dishRouter.route('/:dishId/comments')
         res.statusCode = 403;
         res.end('PUT operation not supported on /dishes/'+ req.params.dishId + '/comments');
     })
-    .delete(authenticate.verifyUser, (req, res, next) => {
+    .delete(authenticate.verifyUser,authenticate.verifyAdmin, (req, res, next) => {
         Dishes.findById(req.params.dishId)
         .then((dish) => {
             if (dish != null) {
